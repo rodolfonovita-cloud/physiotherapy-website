@@ -627,4 +627,5 @@ document.addEventListener('DOMContentLoaded', () => {
 // Initialize language preference when page loads
 document.addEventListener('DOMContentLoaded', function() {
     loadLanguagePreference();
+    // Language switching fix applied
 });
