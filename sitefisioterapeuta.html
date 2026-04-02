@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physiotherapy Clinic - Professional Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .fade-in { animation: fadeIn 0.8s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .scroll-smooth { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-gray-800">
+                    <i class="fas fa-heartbeat text-blue-600 mr-2"></i>
+                    PhysioCare
+                </div>
+                <div class="flex items-center space-x-8">
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 transition" data-translate="nav-home">Home</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 transition" data-translate="nav-about">About</a>
+                        <a href="#madeira" class="text-gray-700 hover:text-blue-600 transition" data-translate="nav-madeira">Madeira</a>
+                        <a href="#services" class="text-gray-700 hover:text-blue-600 transition" data-translate="nav-services">Services</a>
+                        <a href="#expertise" class="text-gray-700 hover:text-blue-600 transition" data-translate="nav-expertise">Expertise</a>
+                        <a href="#contact" class="text-gray-700 hover:text-blue-600 transition" data-translate="nav-contact">Contact</a>
+                        <a href="https://wa.me/351929245502" target="_blank" class="text-gray-700 hover:text-green-600 transition flex items-center">
+                            <i class="fab fa-whatsapp text-green-600 text-lg mr-1"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                    <div class="relative">
+                        <button id="language-btn" class="flex items-center space-x-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">EN</span>
+                            <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div id="language-dropdown" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                            <button class="lang-option w-full text-left px-4 py-2 hover:bg-gray-100 transition" data-lang="en">
+                                🇬🇧 English
+                            </button>
+                            <button class="lang-option w-full text-left px-4 py-2 hover:bg-gray-100 transition" data-lang="pt">
+                                🇵🇹 Português
+                            </button>
+                            <button class="lang-option w-full text-left px-4 py-2 hover:bg-gray-100 transition" data-lang="fr">
+                                🇫🇷 Français
+                            </button>
+                            <button class="lang-option w-full text-left px-4 py-2 hover:bg-gray-100 transition" data-lang="de">
+                                🇩🇪 Deutsch
+                            </button>
+                            <button class="lang-option w-full text-left px-4 py-2 hover:bg-gray-100 transition" data-lang="es">
+                                🇪🇸 Español
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-2xl text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-6 py-4 space-y-3">
+                <a href="#home" class="block text-gray-700 hover:text-blue-600 transition">Home</a>
+                <a href="#about" class="block text-gray-700 hover:text-blue-600 transition">About</a>
+                <a href="#madeira" class="block text-gray-700 hover:text-blue-600 transition">Madeira</a>
+                <a href="#services" class="block text-gray-700 hover:text-blue-600 transition">Services</a>
+                <a href="#expertise" class="block text-gray-700 hover:text-blue-600 transition">Expertise</a>
+                <a href="#contact" class="block text-gray-700 hover:text-blue-600 transition">Contact</a>
+                <a href="https://wa.me/351929245502" target="_blank" class="block text-gray-700 hover:text-green-600 transition flex items-center">
+                    <i class="fab fa-whatsapp text-green-600 text-lg mr-1"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center text-white">
+        <div class="container mx-auto px-6 py-20">
+            <div class="max-w-4xl mx-auto text-center fade-in">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6" data-translate="hero-title">
+                    Move Better, Feel Stronger, Live Pain-Free
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90" data-translate="hero-subtitle">
+                    Professional physiotherapy with evidence-based, hands-on treatment
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105" data-translate="hero-book">
+                        Book Consultation
+                    </a>
+                    <a href="#about" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition" data-translate="hero-learn">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 text-gray-800" data-translate="about-title">About Me</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in">
+                        <img src="https://images.unsplash.com/photo-1559839734-49b21256e4b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Physiotherapy" class="rounded-lg shadow-xl w-full">
+                    </div>
+                    <div class="fade-in">
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed" data-translate="about-para1">
+                            I am a licensed physiotherapist with over four years of clinical experience, dedicated to helping individuals move better, feel stronger, and live pain-free.
+                        </p>
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed" data-translate="about-para2">
+                            I hold a specialization in Manual Therapy for Neuromusculoskeletal Disorders and I am currently completing an advanced postgraduate program in Clinical Research and Advanced Manual Therapy.
+                        </p>
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed" data-translate="about-para3">
+                            My work spans across private practice, both in-clinic and home-based care, allowing me to provide personalized treatment tailored to each patient's needs and lifestyle.
+                        </p>
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed" data-translate="about-languages">
+                            I speak Portuguese and English fluently, and I'm available to use translation services to communicate effectively in any language, ensuring all patients receive the highest quality care regardless of their native language.
+                        </p>
+                        <div class="bg-blue-100 border-l-4 border-blue-600 p-4 rounded">
+                            <p class="text-blue-800 font-medium italic" data-translate="about-quote">
+                                "Sometimes, all we need is a small push toward a pain-free life."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Madeira Island Section -->
+    <section id="madeira" class="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <div class="text-6xl mb-6">🏝️</div>
+                    <h2 class="text-4xl font-bold mb-6 text-gray-800" data-translate="madeira-title">Madeira Island - Active Paradise</h2>
+                    <p class="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed" data-translate="madeira-desc">
+                        Madeira Island is a paradise with endless activities and breathtaking landscapes. From mountain biking through lush forests to canyoning down stunning waterfalls, adventure awaits at every turn. But sometimes, even in paradise, mistakes happen.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-semibold text-gray-800" data-translate="madeira-subtitle">Here to Help, Whether You're Visiting or Living Here</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed" data-translate="madeira-para1">
+                            Are you here on vacation enjoying our island's incredible outdoor activities? Or perhaps you're lucky enough to call Madeira home? Whatever your situation, injuries don't take holidays.
+                        </p>
+                        <p class="text-lg text-gray-700 leading-relaxed" data-translate="madeira-para2">
+                            From <strong>mountain biking injuries</strong> on our challenging trails to <strong>canyoning strains</strong> from waterfall adventures, I understand the unique demands of Madeira's active lifestyle. My expertise in sports rehabilitation and manual therapy is perfectly suited to get you back to exploring our beautiful island.
+                        </p>
+                        <div class="bg-blue-100 border-l-4 border-blue-600 p-6 rounded-lg">
+                            <p class="text-blue-800 font-medium text-lg" data-translate="madeira-cta">
+                                🌴 Don't let an injury ruin your Madeira experience. Stay in touch with me for expert care that understands our island's active lifestyle.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center card-hover">
+                            <div class="text-3xl mb-2">🚴‍♂️</div>
+                            <p class="font-semibold text-gray-800">Mountain Biking</p>
+                            <p class="text-sm text-gray-600">Trail injuries & recovery</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center card-hover">
+                            <div class="text-3xl mb-2">🧗‍♂️</div>
+                            <p class="font-semibold text-gray-800">Canyoning</p>
+                            <p class="text-sm text-gray-600">Fall recovery & upper limb rehabilitation</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center card-hover">
+                            <div class="text-3xl mb-2">🥾</div>
+                            <p class="font-semibold text-gray-800">Hiking</p>
+                            <p class="text-sm text-gray-600">Joint & muscle care</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-md text-center card-hover">
+                            <div class="text-3xl mb-2">🏊‍♂️</div>
+                            <p class="font-semibold text-gray-800">Water Sports</p>
+                            <p class="text-sm text-gray-600">Aquatic therapy & rehab</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Offer Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 text-gray-800" data-translate="services-title">What I Offer</h2>
+                <div class="text-center mb-12">
+                    <p class="text-xl text-gray-700 max-w-3xl mx-auto" data-translate="services-desc">
+                        I focus on evidence-based, hands-on therapy combined with individualized rehabilitation plans to ensure long-term results — not just temporary relief.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card-hover bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-xl text-center">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-hands text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800" data-translate="service-manual-title">Manual Therapy</h3>
+                        <p class="text-gray-600" data-translate="service-manual-desc">Specialized hands-on techniques for neuromusculoskeletal disorders with advanced therapeutic approaches.</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-sky-50 to-blue-50 p-8 rounded-xl text-center">
+                        <div class="w-16 h-16 bg-sky-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-user-md text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800" data-translate="service-personal-title">Personalized Care</h3>
+                        <p class="text-gray-600" data-translate="service-personal-desc">Individualized treatment plans tailored to your specific needs, lifestyle, and recovery goals.</p>
+                    </div>
+                    <div class="card-hover bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-xl text-center">
+                        <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-home text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800" data-translate="service-home-title">Home-Based Care</h3>
+                        <p class="text-gray-600" data-translate="service-home-desc">Convenient home visit services for those who prefer treatment in the comfort of their own space.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 text-gray-800" data-translate="expertise-title">Areas of Expertise</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                        <div class="text-blue-600 text-4xl mb-4 text-center">
+                            🏃‍♂️
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2 text-gray-800 text-center" data-translate="expertise-sports">Sports Injuries</h3>
+                        <p class="text-gray-600 text-center mb-3" data-translate="expertise-sports-desc">Performance recovery and rehabilitation for athletes of all levels.</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li data-translate="expertise-sports-list1">• Sprains & strains</li>
+                            <li data-translate="expertise-sports-list2">• Post-surgery rehab</li>
+                            <li data-translate="expertise-sports-list3">• Performance optimization</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                        <div class="text-sky-600 text-4xl mb-4 text-center">
+                            👴🏻
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2 text-gray-800 text-center" data-translate="expertise-geriatric">Geriatric Care</h3>
+                        <p class="text-gray-600 text-center mb-3" data-translate="expertise-geriatric-desc">Mobility improvement and quality of life enhancement for seniors.</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li data-translate="expertise-geriatric-list1">• Fall prevention</li>
+                            <li data-translate="expertise-geriatric-list2">• Arthritis management</li>
+                            <li data-translate="expertise-geriatric-list3">• Balance training</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                        <div class="text-indigo-600 text-4xl mb-4 text-center">
+                            🦴
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2 text-gray-800 text-center" data-translate="expertise-musculo">Musculoskeletal</h3>
+                        <p class="text-gray-600 text-center mb-3" data-translate="expertise-musculo-desc">Comprehensive management of chronic pain and musculoskeletal conditions.</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li data-translate="expertise-musculo-list1">• Back & neck pain</li>
+                            <li data-translate="expertise-musculo-list2">• Joint disorders</li>
+                            <li data-translate="expertise-musculo-list3">• Chronic pain relief</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                        <div class="text-cyan-600 text-4xl mb-4 text-center">
+                            🧘‍♀️
+                        </div>
+                        <h3 class="font-semibold text-lg mb-2 text-gray-800 text-center" data-translate="expertise-visceral">Visceral Osteopathy</h3>
+                        <p class="text-gray-600 text-center mb-3" data-translate="expertise-visceral-desc">Holistic integrative treatment approaches for whole-body wellness.</p>
+                        <ul class="text-sm text-gray-500 space-y-1">
+                            <li data-translate="expertise-visceral-list1">• Organ mobility</li>
+                            <li data-translate="expertise-visceral-list2">• Holistic assessment</li>
+                            <li data-translate="expertise-visceral-list3">• Integrative therapy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 text-gray-800" data-translate="contact-title">Get in Touch</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6 text-gray-800" data-translate="contact-subtitle">Start Your Journey to Recovery</h3>
+                        <p class="text-gray-600 mb-8" data-translate="contact-desc">
+                            Ready to take the first step toward a pain-free life? Contact me today to schedule your consultation.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-blue-600 text-xl w-8"></i>
+                                <span class="text-gray-700 ml-4">+351 929 245 502</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-blue-600 text-xl w-8"></i>
+                                <span class="text-gray-700 ml-4">fisiorodolfonovita@hotmail.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-blue-600 text-xl w-8"></i>
+                                <span class="text-gray-700 ml-4" data-translate="contact-location">Rua das Hortas 55</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-home text-blue-600 text-xl w-8"></i>
+                                <span class="text-gray-700 ml-4" data-translate="contact-homecare">At home based care available</span>
+                            </div>
+                            <div class="mt-4">
+                                <a href="https://wa.me/351929245502" target="_blank" class="inline-flex items-center bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition transform hover:scale-105">
+                                    <i class="fab fa-whatsapp text-xl mr-2"></i>
+                                    <span data-translate="contact-whatsapp"></span>Contact via WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <form id="contact-form" class="space-y-4">
+                            <input type="text" placeholder="Your Name" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" data-translate-placeholder="contact-name">
+                            <input type="email" placeholder="Your Email" required
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" data-translate-placeholder="contact-email">
+                            <input type="tel" placeholder="Your Phone"
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" data-translate-placeholder="contact-phone">
+                            <textarea placeholder="Tell me about your condition..." rows="4" required
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-600" data-translate-placeholder="contact-message"></textarea>
+                            <button type="submit" 
+                                    class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition transform hover:scale-105" data-translate="contact-submit">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="mb-4">
+                    <i class="fas fa-heartbeat text-blue-400 text-2xl mr-2"></i>
+                    <span class="text-xl font-semibold" data-translate="footer-title">PhysioCare</span>
+                </div>
+                <p class="text-gray-400 mb-4" data-translate="footer-tagline">Professional physiotherapy for a better quality of life</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                </div>
+                <p class="text-gray-500 text-sm mt-6" data-translate="footer-copyright">© 2024 PhysioCare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
