@@ -626,6 +626,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Initialize language preference when page loads
 document.addEventListener('DOMContentLoaded', function() {
-    loadLanguagePreference();
-    // Language switching fix applied
+    // Small delay to ensure DOM is fully loaded
+    setTimeout(() => {
+        loadLanguagePreference();
+        // Double-check language persistence after 2 seconds
+        setTimeout(() => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            if (currentLanguage !== savedLang) {
+                changeLanguage(savedLang);
+            }
+        }, 2000);
+    }, 100);
 });
