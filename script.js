@@ -468,6 +468,9 @@ function changeLanguage(lang) {
         mobileCurrentLangSpan.textContent = lang.toUpperCase();
     }
     
+    // Hide mobile language dropdown after selection
+    hideMobileLanguageDropdown();
+    
     // Update all elements with data-translate attribute
     document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.dataset.translate;
@@ -515,6 +518,14 @@ function toggleMobileLanguage() {
     if (mobileLanguageDropdown) {
         mobileLanguageDropdown.classList.toggle('hidden');
         console.log('Mobile language toggled via onclick');
+    }
+}
+
+// Hide mobile language dropdown after selection
+function hideMobileLanguageDropdown() {
+    const mobileLanguageDropdown = document.getElementById('mobile-language-dropdown');
+    if (mobileLanguageDropdown) {
+        mobileLanguageDropdown.classList.add('hidden');
     }
 }
 
