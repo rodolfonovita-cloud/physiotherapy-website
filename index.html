@@ -44,7 +44,7 @@
                             <span id="current-lang">EN</span>
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
-                        <div id="language-dropdown" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                        <div id="language-dropdown" class="hidden absolute right-0 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 z-50 md:right-0 md:absolute">
                             <button onclick="changeLanguage('en')" class="lang-option w-full text-left px-4 py-2 hover:bg-gray-100 transition" data-lang="en">
                                 🇬🇧 English
                             </button>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <!-- Mobile Menu and Language Buttons -->
-                <div class="md:hidden flex items-center space-x-3">
+                <div class="md:hidden flex items-center justify-between space-x-4">
                     <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-blue-600 transition p-2">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
