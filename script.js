@@ -438,6 +438,14 @@ const languageDropdown = document.getElementById('language-dropdown');
 const currentLangSpan = document.getElementById('current-lang');
 
 // Toggle language dropdown
+function toggleLanguageDropdown() {
+    const languageDropdown = document.getElementById('language-dropdown');
+    if (languageDropdown) {
+        languageDropdown.classList.toggle('hidden');
+    }
+}
+
+// Toggle language dropdown
 languageBtn.addEventListener('click', () => {
     languageDropdown.classList.toggle('hidden');
 });
