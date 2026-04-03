@@ -99,7 +99,7 @@
                 </div>
                 <!-- Mobile Menu and Language Buttons -->
 <div class="md:hidden flex items-center space-x-2">
-  <button onclick="toggleMobileLang()" class="flex items-center px-3 py-2 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium">
+  <button onclick="toggleMobileLang()" class="flex items-center px-3 py-2 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium hover:bg-blue-200 transition cursor-pointer">
     <i class="fas fa-globe mr-1"></i>
     <span id="mobile-current-lang">EN</span>
   </button>
@@ -125,21 +125,21 @@
             </div>
         </div>
         <!-- Mobile Language Dropdown -->
-        <div id="mobile-language-dropdown" class="hidden md:hidden bg-white border-t px-4 py-3">
+        <div id="mobile-language-dropdown" class="hidden md:hidden bg-white border-t px-4 py-3 relative z-50">
             <div class="grid grid-cols-2 gap-2">
-                <button onclick="changeLanguage('en')" class="mobile-lang-option w-full text-left px-4 py-3 hover:bg-gray-100 transition border rounded-lg" data-lang="en">
+                <button onclick="changeLanguage('en')" class="mobile-lang-option w-full text-left px-4 py-3 hover:bg-gray-100 transition border rounded-lg cursor-pointer" data-lang="en">
                     🇬🇧 English
                 </button>
-                <button onclick="changeLanguage('pt')" class="mobile-lang-option w-full text-left px-4 py-3 hover:bg-gray-100 transition border rounded-lg" data-lang="pt">
+                <button onclick="changeLanguage('pt')" class="mobile-lang-option w-full text-left px-4 py-3 hover:bg-gray-100 transition border rounded-lg cursor-pointer" data-lang="pt">
                     🇵🇹 Português
                 </button>
-                <button onclick="changeLanguage('fr')" class="mobile-lang-option w-full text-left px-4 py-3 hover:bg-gray-100 transition border rounded-lg" data-lang="fr">
+                <button onclick="changeLanguage('fr')" class="mobile-lang-option w-full text-left px-4 py-3 hover:bg-gray-100 transition border rounded-lg cursor-pointer" data-lang="fr">
                     🇫🇷 Français
                 </button>
-                <button onclick="changeLanguage('de')" class="mobile-lang-option w-full text-left px-4 py-3 hover:bg-gray-100 transition border rounded-lg" data-lang="de">
+                <button onclick="changeLanguage('de')" class="mobile-lang-option w-full text-left px-4 py-3 hover:bg-gray-100 transition border rounded-lg cursor-pointer" data-lang="de">
                     🇩🇪 Deutsch
                 </button>
-                <button onclick="changeLanguage('es')" class="mobile-lang-option w-full text-left px-4 py-3 hover:bg-gray-100 transition border rounded-lg" data-lang="es">
+                <button onclick="changeLanguage('es')" class="mobile-lang-option w-full text-left px-4 py-3 hover:bg-gray-100 transition border rounded-lg cursor-pointer" data-lang="es">
                     🇪🇸 Español
                 </button>
             </div>
