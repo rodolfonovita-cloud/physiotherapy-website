@@ -507,19 +507,51 @@ function loadLanguagePreference() {
 // Simple mobile functions for onclick
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLanguageDropdown = document.getElementById('mobile-language-dropdown');
+    
+    // Close language dropdown when opening menu
+    if (mobileLanguageDropdown && !mobileLanguageDropdown.classList.contains('hidden')) {
+        mobileLanguageDropdown.classList.add('hidden');
+    }
+    
+    // Toggle menu
     if (mobileMenu) {
         mobileMenu.classList.toggle('hidden');
-        console.log('Mobile menu toggled via onclick');
     }
 }
 
 function toggleMobileLanguage() {
     const mobileLanguageDropdown = document.getElementById('mobile-language-dropdown');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    // Close menu when opening language dropdown
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+    }
+    
+    // Toggle language dropdown
     if (mobileLanguageDropdown) {
         mobileLanguageDropdown.classList.toggle('hidden');
-        console.log('Mobile language toggled via onclick');
     }
 }
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLanguageDropdown = document.getElementById('mobile-language-dropdown');
+    const mobileMenuButton = event.target.closest('button[onclick*="toggleMobileMenu"]');
+    const mobileLanguageButton = event.target.closest('button[onclick*="toggleMobileLanguage"]');
+    
+    // Close menu if clicking outside
+    if (!event.target.closest('#mobile-menu') && !mobileMenuButton && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+    }
+    
+    // Close language dropdown if clicking outside
+    if (!event.target.closest('#mobile-language-dropdown') && !mobileLanguageButton && mobileLanguageDropdown && !mobileLanguageDropdown.classList.contains('hidden')) {
+        mobileLanguageDropdown.classList.add('hidden');
+    }
+});
 
 // Hide mobile language dropdown after selection
 function hideMobileLanguageDropdown() {

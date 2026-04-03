@@ -63,8 +63,16 @@
                         </div>
                     </div>
                 </div>
-                <!-- Mobile Menu and Language Buttons -->
-                <div class="md:hidden flex items-center justify-between px-4">
+                <!-- Mobile Navigation -->
+                <div class="md:hidden flex items-center space-x-4">
+                    <a href="https://wa.me/351929245502" target="_blank" class="text-gray-700 hover:text-green-600 transition flex items-center">
+                        <i class="fab fa-whatsapp text-green-600 text-lg mr-1"></i>
+                        WhatsApp
+                    </a>
+                    <button onclick="toggleMobileLanguage()" class="flex items-center space-x-2 px-3 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition">
+                        <i class="fas fa-globe text-sm"></i>
+                        <span id="mobile-current-lang" class="text-sm">EN</span>
+                    </button>
                     <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-blue-600 transition p-2">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
@@ -86,8 +94,8 @@
                 </a>
             </div>
         </div>
-        <!-- Mobile Language Dropdown (always visible) -->
-        <div id="mobile-language-dropdown" class="md:hidden bg-white border-t px-4 py-3 transition-all duration-300">
+        <!-- Mobile Language Dropdown -->
+        <div id="mobile-language-dropdown" class="hidden md:hidden bg-white border-t px-4 py-3 transition-all duration-300">
             <div class="grid grid-cols-2 gap-2">
                 <button onclick="changeLanguage('en')" class="mobile-lang-option w-full text-left px-4 py-3 hover:bg-gray-100 transition border rounded-lg" data-lang="en">
                     🇬🇧 English
