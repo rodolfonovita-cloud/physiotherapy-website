@@ -470,6 +470,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
+function toggleMobileMenu() {
+  document.getElementById('mobile-menu').classList.toggle('hidden');
+  document.getElementById('mobile-language-dropdown').classList.add('hidden');
+}
+
+function toggleMobileLang() {
+  document.getElementById('mobile-language-dropdown').classList.toggle('hidden');
+  document.getElementById('mobile-menu').classList.add('hidden');
+}
+
 function changeLanguage(lang) {
     currentLanguage = lang;
     currentLangSpan.textContent = lang.toUpperCase();
