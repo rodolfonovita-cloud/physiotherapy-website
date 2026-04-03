@@ -445,22 +445,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Mobile hamburger menu
-  window.toggleMobileMenu = function () {
-    const menu = document.getElementById('mobile-menu');
-    const langDrop = document.getElementById('mobile-language-dropdown');
-    if (menu) menu.classList.toggle('hidden');
-    if (langDrop) langDrop.classList.add('hidden');
-  };
-
-  // Mobile language dropdown
-  window.toggleMobileLang = function () {
-    const langDrop = document.getElementById('mobile-language-dropdown');
-    const menu = document.getElementById('mobile-menu');
-    if (langDrop) langDrop.classList.toggle('hidden');
-    if (menu) menu.classList.add('hidden');
-  };
-
   // Close all dropdowns when clicking outside
   document.addEventListener('click', function () {
     if (langDropdown) langDropdown.classList.add('hidden');
@@ -470,15 +454,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-function toggleMobileMenu() {
-  document.getElementById('mobile-menu').classList.toggle('hidden');
-  document.getElementById('mobile-language-dropdown').classList.add('hidden');
-}
+// Make mobile functions globally accessible
+window.toggleMobileMenu = function () {
+  const menu = document.getElementById('mobile-menu');
+  const langDrop = document.getElementById('mobile-language-dropdown');
+  if (menu) menu.classList.toggle('hidden');
+  if (langDrop) langDrop.classList.add('hidden');
+};
 
-function toggleMobileLang() {
-  document.getElementById('mobile-language-dropdown').classList.toggle('hidden');
-  document.getElementById('mobile-menu').classList.add('hidden');
-}
+window.toggleMobileLang = function () {
+  const langDrop = document.getElementById('mobile-language-dropdown');
+  const menu = document.getElementById('mobile-menu');
+  if (langDrop) langDrop.classList.toggle('hidden');
+  if (menu) menu.classList.add('hidden');
+};
 
 function changeLanguage(lang) {
     currentLanguage = lang;
