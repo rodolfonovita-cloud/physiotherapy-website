@@ -471,7 +471,12 @@ window.toggleMobileLang = function () {
 
 function changeLanguage(lang) {
     currentLanguage = lang;
-    currentLangSpan.textContent = lang.toUpperCase();
+    
+    // Update desktop language display
+    const currentLangSpan = document.getElementById('current-lang');
+    if (currentLangSpan) {
+        currentLangSpan.textContent = lang.toUpperCase();
+    }
     
     // Update mobile language display
     const mobileCurrentLangSpan = document.getElementById('mobile-current-lang');
@@ -480,12 +485,15 @@ function changeLanguage(lang) {
     }
     
     // Hide mobile language dropdown after selection
-    hideMobileLanguageDropdown();
+    const mobileLanguageDropdown = document.getElementById('mobile-language-dropdown');
+    if (mobileLanguageDropdown) {
+        mobileLanguageDropdown.classList.add('hidden');
+    }
     
     // Update all elements with data-translate attribute
     document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.dataset.translate;
-        if (translations[lang][key]) {
+        if (translations[lang] && translations[lang][key]) {
             element.textContent = translations[lang][key];
         }
     });
@@ -493,7 +501,7 @@ function changeLanguage(lang) {
     // Update all elements with data-translate-placeholder attribute
     document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
         const key = element.dataset.translatePlaceholder;
-        if (translations[lang][key]) {
+        if (translations[lang] && translations[lang][key]) {
             element.placeholder = translations[lang][key];
         }
     });
@@ -507,9 +515,6 @@ function changeLanguage(lang) {
     
     // Save language preference
     localStorage.setItem('preferredLanguage', lang);
-    
-    // Hide mobile language dropdown after selection
-    document.getElementById('mobile-language-dropdown').classList.add('hidden');
 }
 
 // Load saved language preference
