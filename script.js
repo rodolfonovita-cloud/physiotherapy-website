@@ -466,6 +466,15 @@ document.querySelectorAll('.lang-option').forEach(button => {
     });
 });
 
+// Handle mobile language selection
+document.querySelectorAll('.mobile-lang-option').forEach(button => {
+    button.addEventListener('click', () => {
+        const selectedLang = button.dataset.lang;
+        changeLanguage(selectedLang);
+        hideMobileLanguageDropdown();
+    });
+});
+
 function changeLanguage(lang) {
     currentLanguage = lang;
     currentLangSpan.textContent = lang.toUpperCase();
