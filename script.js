@@ -455,14 +455,16 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Make mobile functions globally accessible
-window.toggleMobileMenu = function () {
+window.toggleMobileMenu = function (e) {
+  if (e) e.stopPropagation();
   const menu = document.getElementById('mobile-menu');
   const langDrop = document.getElementById('mobile-language-dropdown');
   if (menu) menu.classList.toggle('hidden');
   if (langDrop) langDrop.classList.add('hidden');
 };
 
-window.toggleMobileLang = function () {
+window.toggleMobileLang = function (e) {
+  if (e) e.stopPropagation();
   const langDrop = document.getElementById('mobile-language-dropdown');
   const menu = document.getElementById('mobile-menu');
   if (langDrop) langDrop.classList.toggle('hidden');
