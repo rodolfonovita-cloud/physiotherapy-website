@@ -53,7 +53,7 @@
 </head>
 <body class="scroll-smooth">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+    <nav class="fixed top-0 w-full bg-white shadow-md z-50 overflow-visible">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="text-2xl font-bold text-gray-800">
@@ -78,7 +78,7 @@
                             <span id="current-lang">EN</span>
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
-                        <div id="language-dropdown" class="hidden absolute right-4 mt-2 w-40 bg-white rounded-lg shadow-lg border border-gray-200 z-50 md:right-0 md:absolute">
+                        <div id="language-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-[9999]">
                             <button onclick="changeLanguage('en')" class="lang-option w-full text-left px-4 py-2 hover:bg-gray-100 transition" data-lang="en">
                                 🇬🇧 English
                             </button>
