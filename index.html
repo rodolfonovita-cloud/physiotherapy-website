@@ -73,7 +73,7 @@
                         WhatsApp
                     </a>
                     <div class="relative ml-8">
-                        <button id="language-btn" onclick="toggleLanguageDropdown()" class="flex items-center space-x-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition">
+                        <button id="language-btn" class="flex items-center space-x-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition">
                             <i class="fas fa-globe"></i>
                             <span id="current-lang">EN</span>
                             <i class="fas fa-chevron-down text-xs"></i>
@@ -125,7 +125,7 @@
             </div>
         </div>
         <!-- Mobile Language Dropdown -->
-        <div id="mobile-language-dropdown" class="hidden md:hidden bg-white border border-gray-200 rounded-lg shadow-lg px-4 py-3 transition-all duration-300 relative z-50 hidden" style="position: absolute; top: 100%; left: 0; right: 0; margin-top: 0.5rem;">
+        <div id="mobile-language-dropdown" class="hidden md:hidden bg-white border border-gray-200 rounded-lg shadow-lg px-4 py-3 transition-all duration-300 relative z-50" style="position: absolute; top: 100%; left: 0; right: 0; margin-top: 0.5rem;">
             <div class="grid grid-cols-2 gap-2">
                 <button onclick="changeLanguage('en')" class="mobile-lang-option w-full text-left px-4 py-3 hover:bg-gray-100 transition border rounded-lg" data-lang="en">
                     🇬🇧 English
