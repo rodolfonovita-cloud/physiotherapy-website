@@ -469,7 +469,8 @@ window.toggleMobileLang = function () {
   if (menu) menu.classList.add('hidden');
 };
 
-function changeLanguage(lang) {
+// Make changeLanguage globally accessible for mobile onclick handlers
+window.changeLanguage = function(lang) {
     currentLanguage = lang;
     
     // Update desktop language display
@@ -515,7 +516,7 @@ function changeLanguage(lang) {
     
     // Save language preference
     localStorage.setItem('preferredLanguage', lang);
-}
+};
 
 // Load saved language preference
 function loadLanguagePreference() {
