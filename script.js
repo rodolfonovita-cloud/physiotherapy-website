@@ -457,6 +457,11 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Toggle mobile language dropdown
+function toggleMobileLang() {
+    document.getElementById('mobile-language-dropdown').classList.toggle('hidden');
+}
+
 // Handle language selection
 document.querySelectorAll('.lang-option').forEach(button => {
     button.addEventListener('click', () => {
@@ -513,6 +518,9 @@ function changeLanguage(lang) {
     
     // Save language preference
     localStorage.setItem('preferredLanguage', lang);
+    
+    // Hide mobile language dropdown after selection
+    document.getElementById('mobile-language-dropdown').classList.add('hidden');
 }
 
 // Load saved language preference
